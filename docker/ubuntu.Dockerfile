@@ -56,6 +56,8 @@ RUN cd /tmp && \
     ./cmake-3.14.4-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir --skip-license && \
     rm ./cmake-3.14.4-Linux-x86_64.sh
 
+RUN /usr/bin/pip3 install torch torchvision opencv-python numpy matplotlib yacs && \
+    /usr/bin/pip3 install git+https://github.com/hsfzxjy/torch2trt
 # Set environment and working directory
 ENV TRT_RELEASE /tensorrt
 ENV TRT_SOURCE /workspace/TensorRT
